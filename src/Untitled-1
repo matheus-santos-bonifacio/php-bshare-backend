@@ -1,0 +1,20 @@
+
+            $this->sql[2] = "SELECT
+            tb_usuario.cd_usuario,
+            tb_pasta.nm_caminho_pasta
+            FROM tb_usuario
+            LEFT JOIN tb_pasta ON tb_usuario.cd_usuario = tb_pasta.cd_usuario";
+
+            $this->sql[3] = "SELECT
+            tb_usuario.cd_usuario,
+            tb_carrinho.dt_ultima_alteracao,
+            tb_carrinho_projeto.cd_projeto
+            FROM tb_usuario
+            JOIN tb_carrinho ON tb_usuario.cd_carrinho = tb_carrinho.cd_carrinho
+            JOIN tb_carrinho_projeto ON tb_carrinho.cd_carrinho = tb_carrinho_projeto.cd_carrinho";
+
+            $this->sql[4] = "SELECT
+            tb_usuario.cd_usuario,
+            tb_projeto_adquirido.cd_projeto
+            FROM tb_usuario
+            JOIN tb_projeto_adquirido ON tb_usuario.cd_usuario = tb_projeto_adquirido.cd_usuario";

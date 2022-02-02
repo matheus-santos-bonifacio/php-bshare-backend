@@ -1,0 +1,7 @@
+.env
+vendor/
+node_modules
+server/src/Database/database.sqlite
+
+server/assets/img/*
+server/assets/project/*

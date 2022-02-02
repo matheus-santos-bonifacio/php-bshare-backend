@@ -1,0 +1,15 @@
+FROM php:7.4-apache
+
+COPY ./ /var/www/html/
+COPY ./config/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY ./config/start-apache /usr/local/bin/start-apache
+
+# COPY /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+
+RUN chmod -R 777 /var/www/html/assets/img/
+RUN chmod -R 777 /var/www/html/assets/project/
+
+RUN a2enmod rewrite
+RUN docker-php-ext-install pdo pdo_mysql
+
+# CMD ["start-apache"]
